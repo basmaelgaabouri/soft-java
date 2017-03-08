@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 5, 2017 3:24:05 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="OrmMapping.Jobs" table="Jobs" catalog="Java" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="clients" class="OrmMapping.Clients" fetch="select">
+            <column name="clientsid" not-null="true" />
+        </many-to-one>
+        <property name="profil" type="string">
+            <column name="profil" length="50" not-null="true" />
+        </property>
+        <property name="status" type="int">
+            <column name="status" not-null="true" />
+        </property>
+        <set name="candidateses" table="Candidates_worked_jobs" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Jobsid" not-null="true" />
+            </key>
+            <many-to-many entity-name="OrmMapping.Candidates">
+                <column name="Candidatesid" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="candidateses_1" table="Candidates_Jobs" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="Jobsid" not-null="true" />
+            </key>
+            <many-to-many entity-name="OrmMapping.Candidates">
+                <column name="Candidatesid" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="entretiens" table="Entretien" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Jobsid" not-null="true" />
+            </key>
+            <one-to-many class="OrmMapping.Entretien" />
+        </set>
+        <set name="jobDescriptions" table="JobDescription" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Jobsid" not-null="true" />
+            </key>
+            <one-to-many class="OrmMapping.JobDescription" />
+        </set>
+    </class>
+</hibernate-mapping>

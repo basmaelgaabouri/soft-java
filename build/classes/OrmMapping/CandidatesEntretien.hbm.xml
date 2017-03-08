@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 5, 2017 3:24:05 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="OrmMapping.CandidatesEntretien" table="Candidates_Entretien" catalog="Java" optimistic-lock="version">
+        <composite-id name="id" class="OrmMapping.CandidatesEntretienId">
+            <key-property name="candidatesid" type="int">
+                <column name="Candidatesid" />
+            </key-property>
+            <key-property name="entretienid" type="int">
+                <column name="Entretienid" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="candidates" class="OrmMapping.Candidates" update="false" insert="false" fetch="select">
+            <column name="Candidatesid" not-null="true" />
+        </many-to-one>
+        <many-to-one name="entretien" class="OrmMapping.Entretien" update="false" insert="false" fetch="select">
+            <column name="Entretienid" not-null="true" />
+        </many-to-one>
+        <property name="phase" type="string">
+            <column name="phase" length="50" not-null="true" />
+        </property>
+        <property name="column" type="int">
+            <column name="Column" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
