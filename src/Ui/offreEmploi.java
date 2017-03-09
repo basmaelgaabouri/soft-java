@@ -155,11 +155,13 @@ public class offreEmploi extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void dashbordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashbordActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new offreEmploi().setVisible(true);
     }//GEN-LAST:event_dashbordActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new ajoutOffre().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

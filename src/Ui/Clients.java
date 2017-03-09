@@ -48,9 +48,19 @@ public class Clients extends javax.swing.JFrame {
 
         clients.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ui/icons/work-parteners.png"))); // NOI18N
         clients.setText("  Clients");
+        clients.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientsActionPerformed(evt);
+            }
+        });
 
         employes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ui/icons/employes.png"))); // NOI18N
         employes.setText("  Employes");
+        employes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                employesActionPerformed(evt);
+            }
+        });
 
         dashbord.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ui/icons/dashboard.png"))); // NOI18N
         dashbord.setText("Tableau de bord");
@@ -62,6 +72,11 @@ public class Clients extends javax.swing.JFrame {
 
         cndEnCours.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ui/icons/candidates.png"))); // NOI18N
         cndEnCours.setText("candidat en cours");
+        cndEnCours.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cndEnCoursActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -173,12 +188,28 @@ public class Clients extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void dashbordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashbordActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new AfficheCandidat().setVisible(true);
     }//GEN-LAST:event_dashbordActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cndEnCoursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cndEnCoursActionPerformed
+        dispose();
+        new candidatEnCours().setVisible(true);
+    }//GEN-LAST:event_cndEnCoursActionPerformed
+
+    private void employesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employesActionPerformed
+        dispose();
+        new employes().setVisible(true);
+    }//GEN-LAST:event_employesActionPerformed
+
+    private void clientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientsActionPerformed
+        dispose();
+        new Clients().setVisible(true);
+    }//GEN-LAST:event_clientsActionPerformed
 
     /**
      * @param args the command line arguments

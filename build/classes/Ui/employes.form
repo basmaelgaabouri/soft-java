@@ -123,6 +123,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="  Clients"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clientsActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="employes">
           <Properties>
@@ -131,6 +134,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="  Employes"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="employesActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="dashbord">
           <Properties>
@@ -150,6 +156,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="candidat en cours"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cndEnCoursActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

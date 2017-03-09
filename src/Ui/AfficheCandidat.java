@@ -18,13 +18,13 @@ import com.alee.laf.WebLookAndFeel;
  *
  * @author youpi
  */
-public class jFrame_1 extends javax.swing.JFrame {
+public class AfficheCandidat extends javax.swing.JFrame {
     
     DaoCandidates candidates = new DaoCandidates();
     /**
      * Creates new form jFrame
      */
-    public jFrame_1() {
+    public AfficheCandidat() {
         this.setUndecorated(true);
         this.setAlwaysOnTop(true);
         this.setResizable(false);
@@ -124,9 +124,19 @@ public class jFrame_1 extends javax.swing.JFrame {
 
         clients.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ui/icons/work-parteners.png"))); // NOI18N
         clients.setText("  Clients");
+        clients.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clientsActionPerformed(evt);
+            }
+        });
 
         employes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ui/icons/employes.png"))); // NOI18N
         employes.setText("  Employes");
+        employes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                employesActionPerformed(evt);
+            }
+        });
 
         dashbord.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ui/icons/dashboard.png"))); // NOI18N
         dashbord.setText("Tableau de bord");
@@ -138,6 +148,11 @@ public class jFrame_1 extends javax.swing.JFrame {
 
         cndEnCours.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Ui/icons/candidates.png"))); // NOI18N
         cndEnCours.setText("candidat en cours");
+        cndEnCours.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cndEnCoursActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -280,8 +295,24 @@ public class jFrame_1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jobsActionPerformed
 
     private void dashbordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashbordActionPerformed
-        // TODO add your handling code here:
+        dispose();
+        new AfficheCandidat().setVisible(true);
     }//GEN-LAST:event_dashbordActionPerformed
+
+    private void cndEnCoursActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cndEnCoursActionPerformed
+        dispose();
+        new candidatEnCours().setVisible(true);
+    }//GEN-LAST:event_cndEnCoursActionPerformed
+
+    private void employesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_employesActionPerformed
+        dispose();
+        new employes().setVisible(true);
+    }//GEN-LAST:event_employesActionPerformed
+
+    private void clientsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clientsActionPerformed
+        dispose();
+        new Clients().setVisible(true);
+    }//GEN-LAST:event_clientsActionPerformed
     public void Refresh(){
        // displayResult();
        jobs.removeAllItems();
@@ -341,14 +372,17 @@ public class jFrame_1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(jFrame_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AfficheCandidat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(jFrame_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AfficheCandidat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(jFrame_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AfficheCandidat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(jFrame_1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AfficheCandidat.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -356,7 +390,7 @@ public class jFrame_1 extends javax.swing.JFrame {
             public void run() {
                 WebLookAndFeel.install(true);
                 WebLookAndFeel.setDecorateAllWindows(true);
-                new jFrame_1().setVisible(true);
+                new AfficheCandidat().setVisible(true);
             }
         });
     }
